@@ -62,6 +62,7 @@ packages:
   - amssymb
   - babel
   - booktabs
+  - curvenote
   - datetime
   - doi
   - enumitem
