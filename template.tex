@@ -24,7 +24,11 @@ addtopdfcreator={Written in Curvenote}
 
 \author{[# for author in doc.authors -#]
 \bfseries [-author.name-]\mdseries\\
-[#- if author.affiliations #][- author.affiliations|join(", ", "value") -]\\[# endif -#]
+[#- if author.affiliations #]
+[# for affiliation in author.affiliations #]
+[-affiliation.value.name-][# if not loop.last #], [# endif #]
+[# endfor #]\\
+[#- endif -#]
 [#- if not loop.last -#]
 \AND
 [#- endif -#]
